@@ -26,55 +26,55 @@ let indice = 0;
 const musicas = [
     {
         src: "./music/[YT2mp3.info] - Costa Gold -  N.A.D.A.B.O.M PT 3 (320kbps).mp3",
-        img: "./images/nadabom3.jpeg",
+        img: "https://akamai.sscdn.co/uploadfile/letras/albuns/3/3/8/0/1064351618577158.jpg",
         nome: "Costa Gold - N.A.D.A.B.O.M PT 3",
         nomeArtista: "Costa Gold"
       },
       {
         src: "./music/Numb (Official Music Video) [4K UPGRADE] – Linkin Park.mp3",
-        img: "./images/numb.jpeg",
+        img: "https://upload.wikimedia.org/wikipedia/pt/thumb/b/b9/Linkin_Park_-_Numb_CD_cover.jpg/220px-Linkin_Park_-_Numb_CD_cover.jpg",
         nome: "Numb - Linkin Park",
         nomeArtista: "Linkin Park"
       },
       {
         src: "./music/SnapInsta.io - Avicii - The Nights (128 kbps).mp3",
-        img: "./images/the_nights.jpg",
+        img: "https://upload.wikimedia.org/wikipedia/pt/3/39/The_Nights.jpg",
         nome: "The Nights",
         nomeArtista: "Avicii"
       },
       {
         src: "./music/SnapInsta.io - Edi Rock - That's My Way ft. Seu Jorge [Video Oficial] (192 kbps).mp3",
-        img: "./images/thats_my_way.jpg",
+        img: "https://i.scdn.co/image/ab67616d0000b2733abf540c3d6d6b6d2f656114",
         nome: "That's My Way ft. Seu Jorge",
         nomeArtista: "Edi Rock"
       },
       {
         src: "./music/SnapInsta.io - Imprevisto - Yago Oproprio ft. Rô Rosa (Clipe Oficial) (128 kbps).mp3",
-        img: "./images/imprevisto.jpg",
+        img: "https://i1.sndcdn.com/artworks-tjziG5MoYfEzknxV-LRpAeg-t500x500.jpg",
         nome: "Imprevisto - Yago Oproprio ft. Rô Rosa - Yago Oproprio",
         nomeArtista: "Yago Oproprio"
       },
       {
         src: "./music/SnapInsta.io - Lagum, L7NNON, Mart'nália - EITA MENINA (128 kbps).mp3",
-        img: "./images/eita_menina.jpg",
+        img: "https://versoseprosas.com.br/wp-content/uploads/2021/07/capa-do-single-eita-menina-lagum.jpg",
         nome: "EITA MENINA",
         nomeArtista: "Lagum, L7NNON, Mart'nália"
       },
       {
           src: "./music/SnapInsta.io - Lil Nas X - Old Town Road (Official Movie) ft. Billy Ray Cyrus (128 kbps).mp3",
-          img: "./images/old_town_road.jpg",
+          img: "https://jpimg.com.br/uploads/2019/07/Old-Town-Road-Video-GQ-2019-051719.jpg",
           nome: "Old Town Road",
           nomeArtista: "Lil Nas X"
         },
         {
           src: "./music/SnapInsta.io - MC CABELINHO - X1 (prod. DALLASS) (256 kbps).mp3",
-          img: "./images/x1.jpg",
+          img: "https://akamai.sscdn.co/uploadfile/letras/albuns/1/b/0/1/01655987029.jpg",
           nome: "X1 (prod. DALLASS)",
           nomeArtista: "MC CABELINHO"
         },
         {
           src: "./music/SnapInsta.io - Travis Scott - goosebumps ft. Kendrick Lamar (128 kbps).mp3",
-          img: "./images/goosebumps.jpg",
+          img: "https://wallpapercave.com/wp/wp4566148.jpg",
           nome: "goosebumps ft. Kendrick Lamar",
           nomeArtista: "Travis Scott"
         },
@@ -93,6 +93,9 @@ function playPause() {
 
   function tocarProximaOuAnterior(tipo) {
     console.log(tipo)
+    if(tipo === "aleatorio") {
+        indice = Math.random(Range(0, musicas.length))
+    }
     if (tipo === "proxima") {
       indice = (indice + 1) % musicas.length;
     } else if (tipo === "anterior") {
