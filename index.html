@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="./script.js" type="module"></script>
     <link rel="stylesheet" href="style.css">
     <script src="https://kit.fontawesome.com/76bc1f900d.js" crossorigin="anonymous"></script>
     <title>Master Player</title>
@@ -17,21 +16,22 @@
         <i id="nomeArtista">João de Tal</i>
     </div>
     <div class="duracao">
-        <div class="barra" id="progresso">
-            <progress value="0.9" max="1" id="barra-progresso"></progress>
-            <div class="ponto"></div>
-        </div>
+        <div class="progresso-container">
+            <progress value="0.9" max="1" id="barra-progresso" onclick="atualizarTempoDoReprodutor(event)"></progress>
+            <div class="ponto" id="progresso"></div>
+        </div>        
         <div class="tempo">
-            <p class="inicio" id="tempoAtual" >0:00</p>
-            <p class="fim" id="duracaoTotal" >3:06</p>
+            <p class="progresso-inicio" id="tempoAtual">0:00</p>
+            <p class="progresso-fim" id="duracaoTotal">3:06</p>
         </div>
     </div>
     <div class="player">
-        <i class="fa-solid fa-backward-step" id="botaoAnterior"></i>
-        <i class="fa-solid fa-circle-play" id="botaoPlayPausa"></i>
-        <i class="fa-solid fa-forward-step" id="botaoProximo"></i>
-    </div>
+        <i class="fa-solid fa-backward-step" onclick="tocarProximaOuAnterior('anterior')"></i>
+        <i class="fa-solid fa-circle-play" id="playPause" onclick="playPause()"></i>
+        <i class="fa-solid fa-forward-step" id="proxima" onclick="tocarProximaOuAnterior('proxima')"></i>
+    </div>    
 
     <audio id="reprodutor"></audio>
 </body>
+<script src="./script.js"></script>
 </html>
