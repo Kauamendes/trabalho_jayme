@@ -45,14 +45,14 @@ const musicas = [
       {
         src: "./music/SnapInsta.io - Edi Rock - That's My Way ft. Seu Jorge [Video Oficial] (192 kbps).mp3",
         img: "https://i.scdn.co/image/ab67616d0000b2733abf540c3d6d6b6d2f656114",
-        nome: "That's My Way ft. Seu Jorge",
-        nomeArtista: "Edi Rock"
+        nome: "That's My Way",
+        nomeArtista: "Edi Rock, Seu Jorge"
       },
       {
         src: "./music/SnapInsta.io - Imprevisto - Yago Oproprio ft. Rô Rosa (Clipe Oficial) (128 kbps).mp3",
         img: "https://i1.sndcdn.com/artworks-tjziG5MoYfEzknxV-LRpAeg-t500x500.jpg",
-        nome: "Imprevisto - Yago Oproprio ft. Rô Rosa - Yago Oproprio",
-        nomeArtista: "Yago Oproprio"
+        nome: "Imprevisto",
+        nomeArtista: "Yago Oproprio, Rô Rosa"
       },
       {
         src: "./music/SnapInsta.io - Lagum, L7NNON, Mart'nália - EITA MENINA (128 kbps).mp3",
@@ -75,8 +75,8 @@ const musicas = [
         {
           src: "./music/SnapInsta.io - Travis Scott - goosebumps ft. Kendrick Lamar (128 kbps).mp3",
           img: "https://wallpapercave.com/wp/wp4566148.jpg",
-          nome: "goosebumps ft. Kendrick Lamar",
-          nomeArtista: "Travis Scott"
+          nome: "Goosebumps",
+          nomeArtista: "Travis Scott,  Kendrick Lama"
         },
   ];
 
