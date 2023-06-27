@@ -1,6 +1,7 @@
 const reprodutor = document.getElementById("reprodutor");
 const imagemMusica = document.getElementById("imagemMusica");
 const nomeMusica = document.getElementById("nomeMusica");
+const nomeArtista = document.getElementById("nomeArtista");
 const botaoPlayPausa = document.getElementById("botaoPlayPausa");
 const botaoAnterior = document.getElementById("botaoAnterior");
 const botaoProximo = document.getElementById("botaoProximo");
@@ -61,7 +62,7 @@ function tocarProximaOuAnterior(tipo) {
   reprodutor.src = musicas[indice].src;
   nomeMusica.innerHTML = musicas[indice].nome;
   nomeArtista.innerHTML = musicas[indice].nomeArtista;
-  imagemMusica.innerHTML = musicas[indice].img;
+  imagemMusica.src = musicas[indice].img;
   if (tipo !== "iniciar") playPause();
 
   atualizarTempo();
