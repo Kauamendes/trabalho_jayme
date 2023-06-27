@@ -1,15 +1,37 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="./script.js"></script>
     <link href="./style.css">
-    <title>Document</title>
+    <script src="https://kit.fontawesome.com/76bc1f900d.js" crossorigin="anonymous"></script>
+    <title>Projeto Player Spotfy</title>
 </head>
 
 <body>
-    
+    <img src="images/numb.jpg">
+    <div class="descricao">
+        <h2>Nome da Musica</h2>
+        <i>João de Tal</i>
+    </div>
+    <div class="duracao">
+        <div class="barra">
+            <progress value="0.9" max="1"></progress>
+            <div class="ponto"></div>
+        </div>
+        <div class="tempo">
+            <p class="inicio">0:00</p>
+            <p class="fim">3:06</p>
+        </div>
+    </div>
+    <div class="player">
+        <i class="fa-solid fa-backward-step"></i>
+        <i class="fa-solid fa-circle-play"></i>
+        <i class="fa-solid fa-pause"></i>
+        <i class="fa-solid fa-forward-step"></i>
+    </div>
+    <audio src="music/Numb (Official Music Video) [4K UPGRADE] – Linkin Park.mp3"></audio>
 </body>
 </html>
