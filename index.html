@@ -16,12 +16,13 @@
         <i id="nomeArtista">João de Tal</i>
     </div>
     <div class="duracao">
+        <div>
+            <p class="progresso-inicio" id="tempoAtual">0:00</p>
+        </div>
         <div class="progresso-container">
             <progress value="0.9" max="1" id="barra-progresso" onclick="atualizarTempoDoReprodutor(event)"></progress>
-            <div class="ponto" id="progresso"></div>
         </div>        
-        <div class="tempo">
-            <p class="progresso-inicio" id="tempoAtual">0:00</p>
+        <div>
             <p class="progresso-fim" id="duracaoTotal">3:06</p>
         </div>
     </div>
