@@ -1,13 +1,13 @@
-const reprodutor = document.querySelector("#reprodutor");
-const imagemMusica = document.querySelector("#imagemMusica");
-const nomeMusica = document.querySelector("#nomeMusica");
-const botaoPlayPausa = document.querySelector("#botaoPlayPausa");
-const botaoAnterior = document.querySelector("#botaoAnterior");
-const botaoProximo = document.querySelector("#botaoProximo");
-const tempoAtual = document.querySelector("#tempoAtual");
-const duracaoTotal = document.querySelector("#duracaoTotal");
-const barraProgresso = document.querySelector(".barra-progresso");
-const progresso = document.querySelector(".progresso");
+const reprodutor = document.getElementById("reprodutor");
+const imagemMusica = document.getElementById("imagemMusica");
+const nomeMusica = document.getElementById("nomeMusica");
+const botaoPlayPausa = document.getElementById("botaoPlayPausa");
+const botaoAnterior = document.getElementById("botaoAnterior");
+const botaoProximo = document.getElementById("botaoProximo");
+const tempoAtual = document.getElementById("tempoAtual");
+const duracaoTotal = document.getElementById("duracaoTotal");
+const barraProgresso = document.getElementById("barra-progresso");
+const progresso = document.getElementById("progresso");
 
 import musicas from "./musicas.js";
 
@@ -17,7 +17,7 @@ const textoBotaoPause = "<i class='bx bx-pause'></i>";
 let indice = 0;
 
 botaoAnterior.onclick = () => tocarProximaOuAnterior("prev");
-botaoProximo.onclick = () => tocarProximaOuAnterior();
+botaoProximo.onclick = () => tocarProximaOuAnterior("proximo");
 
 botaoPlayPausa.onclick = () => {
   if (reprodutor.paused) {
@@ -59,7 +59,8 @@ function tocarProximaOuAnterior(tipo) {
     }
 
   reprodutor.src = musicas[indice].src;
-  nomeMusica.innerHTML = musicas[indice].name;
+  nomeMusica.innerHTML = musicas[indice].nome;
+  nomeArtista.innerHTML = musicas[indice].nomeArtista;
   imagemMusica.innerHTML = musicas[indice].img;
   if (tipo !== "iniciar") playPause();
 
