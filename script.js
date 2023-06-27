@@ -12,6 +12,17 @@ const textoBotaoPause = "<i class='fa-solid fa-circle-pause' id='botaoPlayPausa'
 
 let indice = 0;
 
+//Alguns arquivos de audio estão com erro, necessario baixar e colocar no projeto as seguintes musicas
+//
+// - Avicci - the nights
+// - Eita menina L7NOON
+// - OLD TOWN ROAD
+// - Goosebumps
+//
+//
+//
+//
+//
 const musicas = [
     {
         src: "./music/[YT2mp3.info] - Costa Gold -  N.A.D.A.B.O.M PT 3 (320kbps).mp3",
@@ -28,7 +39,7 @@ const musicas = [
       {
         src: "./music/SnapInsta.io - Avicii - The Nights (128 kbps).mp3",
         img: "./images/the_nights.jpg",
-        nome: "The Nights - Avicii",
+        nome: "The Nights",
         nomeArtista: "Avicii"
       },
       {
