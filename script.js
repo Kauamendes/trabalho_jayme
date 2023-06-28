@@ -93,8 +93,14 @@ playPauseButton.onclick = () => playPause();
 
   musicas.forEach((musica) => {
     const li = document.createElement("li");
+    const i = document.createElement("i");
+    const div = document.createElement("div");
     li.textContent = `${musica.nome} - ${musica.nomeArtista}`;
-    lista.appendChild(li);
+    i.className = "fa-solid fa-music";
+    i.style = 'color: #ffffff;';
+    lista.appendChild(div);
+    div.appendChild(i);
+    div.appendChild(li);
 });
 
 
@@ -147,3 +153,11 @@ function formatarZero(n) {
 }
 
 tocarProximaOuAnterior("iniciar");
+
+function toggleMenu() {
+  const listaMusicas = document.getElementById('listaMusicas');
+  const toggleButton = document.getElementById('toggle-btn');
+  listaMusicas.classList.toggle('show-menu');
+  toggleButton.classList.toggle('toggle-btn-on');
+}
+

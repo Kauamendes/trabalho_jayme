@@ -15,9 +15,15 @@
         <h2 id="nomeMusica"></h2>
         <i id="nomeArtista"></i>
     </div>
-    <ul id="listaMusicas">
-        <!-- A lista será preenchida dinamicamente com JavaScript -->
-    </ul>
+
+    <div class="sidebar">
+        <div class="toggle-btn" id="toggle-btn" onclick="toggleMenu()"><i class="fa-solid fa-chevron-right"></i></div>
+        <div style="width:100%; height:100%;">
+            <ul id="listaMusicas" class="menu">
+                <!-- A lista será preenchida dinamicamente com JavaScript -->
+            </ul>
+        </div>
+    </div>      
     <div class="duracao">
         <div>
             <p class="progresso-inicio" id="tempoAtual">0:00</p>
