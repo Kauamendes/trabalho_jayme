@@ -84,10 +84,14 @@ playPauseButton.onclick = () => playPause();
   const playPause = () => {
     if (reprodutor.paused) {
       reprodutor.play();
-      playPauseButton.innerHTML = textoBotaoPlay;
+      console.log(playPauseButton.classList);
+      playPauseButton.classList.replace('fa-circle-pause', 'fa-circle-play');
+      console.log(playPauseButton.classList);
     } else {
       reprodutor.pause();
-      playPauseButton.innerHTML = textoBotaoPause;
+      console.log(playPauseButton.classList);
+      playPauseButton.classList.replace('fa-circle-play', 'fa-circle-pause');
+      console.log(playPauseButton.classList);
     }
   };
 
@@ -106,7 +110,8 @@ playPauseButton.onclick = () => playPause();
 
   function tocarProximaOuAnterior(tipo) {
     if(tipo === "aleatorio") {
-        indice = Math.random(Range(0, musicas.length))
+      var indiceAleatorio = randomInt(0, musicas.length - 1);
+        indice = indiceAleatorio;
     }
     if (tipo === "proxima") {
       indice = (indice + 1) % musicas.length;
@@ -124,6 +129,11 @@ playPauseButton.onclick = () => playPause();
 
   atualizarTempo();
 }
+
+function randomInt(min, max) {
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
 
 progresso.onclick = (e) => {
   const newTime = (e.offsetX / barraProgresso.offsetWidth) * reprodutor.duration;
