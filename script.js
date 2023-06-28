@@ -109,7 +109,9 @@ const playPause = () => {
 
   function tocarProximaOuAnterior(tipo) {
     if(aleatorio) {
+      do {
       var indiceAleatorio = randomInt(0, musicas.length - 1);
+      } while (indice == indiceAleatorio);
       indice = indiceAleatorio;
     }
     if (tipo === "proxima") {
