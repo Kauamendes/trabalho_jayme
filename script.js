@@ -157,3 +157,11 @@ function formatarZero(n) {
 }
 
 tocarProximaOuAnterior("iniciar");
+
+function toggleMenu() {
+  const listaMusicas = document.getElementById('listaMusicas');
+  const toggleButton = document.getElementById('toggle-btn');
+  listaMusicas.classList.toggle('show-menu');
+  toggleButton.classList.toggle('toggle-btn-on');
+}
+
