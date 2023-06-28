@@ -5,8 +5,9 @@ const nomeArtista = document.getElementById("nomeArtista");
 const tempoAtual = document.getElementById("tempoAtual");
 const duracaoTotal = document.getElementById("duracaoTotal");
 const barraProgresso = document.getElementById("barra-progresso");
-const progresso = document.getElementById("progresso");
+const progresso = document.getElementById("barra-progresso");
 const lista = document.getElementById("listaMusicas");
+const playPauseButton = document.getElementById("playPause");
 
 const textoBotaoPlay = "<i class='fa-solid fa-circle-play' id='botaoPlayPausa'></i>";
 const textoBotaoPause = "<i class='fa-solid fa-circle-pause' id='botaoPlayPausa'></i>";
@@ -81,16 +82,19 @@ const musicas = [
         },
   ];
 
-function playPause() {
-    console.log(reprodutor.paused);
+playPauseButton.onclick = () => playPause();
+
+  const playPause = () => {
     if (reprodutor.paused) {
+      console.log("pausado");
       reprodutor.play();
-      botaoPlayPausa.innerHTML = textoBotaoPause;
+      playPauseButton.innerHTML = textoBotaoPlay;
     } else {
+      console.log("iniciado");
       reprodutor.pause();
-      botaoPlayPausa.innerHTML = textoBotaoPlay;
+      playPauseButton.innerHTML = textoBotaoPause;
     }
-  }
+  };
 
   musicas.forEach((musica) => {
     const li = document.createElement("li");
@@ -127,13 +131,11 @@ function playPause() {
   atualizarTempo();
 }
 
-function atualizarTempoDoReprodutor(event) {
-    const barraProgresso = event.target;
-    const reprodutor = document.getElementById("reprodutor");
+progresso.onclick = (e) => {
+  const newTime = (e.offsetX / progressBar.offsetWidth) * player.duration;
+  player.currentTime = newTime;
+};
 
-    const novoTempo = (event.offsetX / barraProgresso.offsetWidth) * reprodutor.duration;
-    reprodutor.currentTime = novoTempo;
-}
 
 
 function atualizarTempo() {
@@ -147,8 +149,7 @@ function atualizarTempo() {
     duracaoTotal.textContent = `${minutosDuracao}:${formatarZero(segundosDuracao)}`;
 
     const larguraProgresso = duracaoFormatada ? (reprodutor.currentTime / duracaoFormatada) * 100 : 0;
-console.log(progresso);
-    progresso.style.width = `${larguraProgresso}%`;
+    //ajustar progresso.style.width = `${larguraProgresso}%`;
 }
 
 function formatarZero(n) {
