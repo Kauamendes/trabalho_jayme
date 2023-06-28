@@ -86,11 +86,9 @@ playPauseButton.onclick = () => playPause();
 
   const playPause = () => {
     if (reprodutor.paused) {
-      console.log("pausado");
       reprodutor.play();
       playPauseButton.innerHTML = textoBotaoPlay;
     } else {
-      console.log("iniciado");
       reprodutor.pause();
       playPauseButton.innerHTML = textoBotaoPause;
     }
@@ -104,7 +102,6 @@ playPauseButton.onclick = () => playPause();
 
 
   function tocarProximaOuAnterior(tipo) {
-    console.log(tipo)
     if(tipo === "aleatorio") {
         indice = Math.random(Range(0, musicas.length))
     }
@@ -126,24 +123,26 @@ playPauseButton.onclick = () => playPause();
 }
 
 progresso.onclick = (e) => {
-  const newTime = (e.offsetX / progressBar.offsetWidth) * player.duration;
-  player.currentTime = newTime;
+  const newTime = (e.offsetX / barraProgresso.offsetWidth) * reprodutor.duration;
+  reprodutor.currentTime = newTime;
 };
 
-
+reprodutor.addEventListener('loadedmetadata', () => {
+  atualizarTempo();
+});
 
 function atualizarTempo() {
     const minutosAtuais = Math.floor(reprodutor.currentTime / 60);
     const segundosAtuais = Math.floor(reprodutor.currentTime % 60);
     tempoAtual.textContent = `${minutosAtuais}:${formatarZero(segundosAtuais)}`;
 
-    const duracaoFormatada = isNaN(reprodutor.duration) ? 0 : reprodutor.duration;
+    const duracaoFormatada = isNaN(reprodutor.duration) ? 0 : reprodutor.duration || 0;
     const minutosDuracao = Math.floor(duracaoFormatada / 60);
     const segundosDuracao = Math.floor(duracaoFormatada % 60);
     duracaoTotal.textContent = `${minutosDuracao}:${formatarZero(segundosDuracao)}`;
 
     const larguraProgresso = duracaoFormatada ? (reprodutor.currentTime / duracaoFormatada) * 100 : 0;
-    //ajustar progresso.style.width = `${larguraProgresso}%`;
+    //progresso.style.width = `${larguraProgresso}%`;
 }
 
 function formatarZero(n) {
