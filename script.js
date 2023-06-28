@@ -94,18 +94,43 @@ const playPause = () => {
     }
   };
 
-  musicas.forEach((musica) => {
+  musicas.forEach((musica, indice) => {
     const li = document.createElement("li");
     const i = document.createElement("i");
     const div = document.createElement("div");
     li.textContent = `${musica.nome} - ${musica.nomeArtista}`;
+    li.setAttribute("id", indice);
     i.className = "fa-solid fa-music";
-    i.style = 'color: #ffffff;';
+    i.style.color = "#ffffff";
     lista.appendChild(div);
     div.appendChild(i);
     div.appendChild(li);
-});
+    li.onclick = function() {
+      selecionarMusica(indice);
+    };
 
+    li.addEventListener("mouseenter", function() {
+      li.style.color = "#1db954";
+      li.style.cursor = "pointer";
+    });
+  
+    li.addEventListener("mouseleave", function() {
+      li.style.color = "#ffffff";
+    });
+  });
+  
+  
+
+function selecionarMusica(musicaNoIndice) {
+  indice = musicaNoIndice;
+  reprodutor.src = musicas[indice].src;
+  nomeMusica.innerHTML = musicas[indice].nome;
+  nomeArtista.innerHTML = musicas[indice].nomeArtista;
+  imagemMusica.src = musicas[indice].img;
+  playPause();
+
+  iniciarAtualizacaoTempo();
+}
 
   function tocarProximaOuAnterior(tipo) {
     if(aleatorio) {
