@@ -13,6 +13,7 @@ const textoBotaoPlay = "<i class='fas fa-circle-play' id='botaoPlayPausa'></i>";
 const textoBotaoPause = "<i class='fas fa-circle-pause' id='botaoPlayPausa'></i>";
 
 let indice = 0;
+let aleatorio = false;
 
 //Alguns arquivos de audio estão com erro, necessario baixar e colocar no projeto as seguintes musicas
 //
@@ -82,7 +83,7 @@ const musicas = [
 playPauseButton.onclick = () => playPause();
 
 const playPause = () => {
-   var playPauseIcon = document.getElementById('playPause');
+   const playPauseIcon = document.getElementById('playPause');
     if (reprodutor.paused) {
       playPauseIcon.classList.replace('fa-circle-play', 'fa-circle-pause');
       reprodutor.play();
@@ -106,9 +107,9 @@ const playPause = () => {
 
 
   function tocarProximaOuAnterior(tipo) {
-    if(tipo === "aleatorio") {
+    if(aleatorio) {
       var indiceAleatorio = randomInt(0, musicas.length - 1);
-        indice = indiceAleatorio;
+      indice = indiceAleatorio;
     }
     if (tipo === "proxima") {
       indice = (indice + 1) % musicas.length;
@@ -170,4 +171,16 @@ function toggleMenu() {
   listaMusicas.classList.toggle('show-menu');
   toggleButton.classList.toggle('toggle-btn-on');
 }
+
+function ativarAleatorio() {
+  console.log("aquii");
+  aleatorio = !aleatorio;
+  const aleatorioIcon = document.getElementById("aleatorio");
+  if(aleatorio) {
+    aleatorioIcon.classList.add('ativo');
+  } else {
+    aleatorioIcon.classList.remove('ativo');
+  }
+}
+
 
