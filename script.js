@@ -87,6 +87,7 @@ const playPause = () => {
     if (reprodutor.paused) {
       playPauseIcon.classList.replace('fa-circle-play', 'fa-circle-pause');
       reprodutor.play();
+      iniciarAtualizacaoTempo();
     } else {
       playPauseIcon.classList.replace('fa-circle-pause', 'fa-circle-play');
       reprodutor.pause();
@@ -125,7 +126,7 @@ const playPause = () => {
   imagemMusica.src = musicas[indice].img;
   if (tipo !== "iniciar") playPause();
 
-  atualizarTempo();
+  iniciarAtualizacaoTempo();
 }
 
 function randomInt(min, max) {
@@ -139,25 +140,27 @@ progresso.onclick = (e) => {
   }
   const newTime = (e.offsetX / barraProgresso.offsetWidth) * reprodutor.duration;
   reprodutor.currentTime = newTime;
+  iniciarAtualizacaoTempo();
 };
 
 reprodutor.addEventListener('loadedmetadata', () => {
-  atualizarTempo();
+  iniciarAtualizacaoTempo();
 });
 
 function atualizarTempo() {
-    const minutosAtuais = Math.floor(reprodutor.currentTime / 60);
-    const segundosAtuais = Math.floor(reprodutor.currentTime % 60);
-    tempoAtual.textContent = `${minutosAtuais}:${formatarZero(segundosAtuais)}`;
+  const minutosAtuais = Math.floor(reprodutor.currentTime / 60);
+  const segundosAtuais = Math.floor(reprodutor.currentTime % 60);
+  tempoAtual.textContent = `${minutosAtuais}:${formatarZero(segundosAtuais)}`;
 
-    const duracaoFormatada = isNaN(reprodutor.duration) ? 0 : reprodutor.duration || 0;
-    const minutosDuracao = Math.floor(duracaoFormatada / 60);
-    const segundosDuracao = Math.floor(duracaoFormatada % 60);
-    duracaoTotal.textContent = `${minutosDuracao}:${formatarZero(segundosDuracao)}`;
+  const duracaoFormatada = isNaN(reprodutor.duration) ? 0 : reprodutor.duration || 0;
+  const minutosDuracao = Math.floor(duracaoFormatada / 60);
+  const segundosDuracao = Math.floor(duracaoFormatada % 60);
+  duracaoTotal.textContent = `${minutosDuracao}:${formatarZero(segundosDuracao)}`;
 
-    const larguraProgresso = duracaoFormatada ? (reprodutor.currentTime / duracaoFormatada) * 100 : 0;
-    //progresso.style.width = `${larguraProgresso}%`;
+  const larguraProgresso = duracaoFormatada ? (reprodutor.currentTime / duracaoFormatada) * 100 : 0;
+  progresso.value = larguraProgresso;
 }
+
 
 function formatarZero(n) {
   return n < 10 ? "0" + n : n;
@@ -182,5 +185,16 @@ function ativarAleatorio() {
     aleatorioIcon.classList.remove('ativo');
   }
 }
+
+function iniciarAtualizacaoTempo() {
+  const intervalo = setInterval(() => {
+    if (reprodutor.paused) {
+      clearInterval(intervalo); // Interrompe a atualização quando a reprodução é pausada
+    } else {
+      atualizarTempo(); // Chama a função para atualizar o tempo
+    }
+  }, 1000); // Intervalo de 1 segundo (1000 milissegundos)
+}
+
 
 
