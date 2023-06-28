@@ -9,8 +9,8 @@ const progresso = document.getElementById("barra-progresso");
 const lista = document.getElementById("listaMusicas");
 const playPauseButton = document.getElementById("playPause");
 
-const textoBotaoPlay = "<i class='fa-solid fa-circle-play' id='botaoPlayPausa'></i>";
-const textoBotaoPause = "<i class='fa-solid fa-circle-pause' id='botaoPlayPausa'></i>";
+const textoBotaoPlay = "<i class='fas fa-circle-play' id='botaoPlayPausa'></i>";
+const textoBotaoPause = "<i class='fas fa-circle-pause' id='botaoPlayPausa'></i>";
 
 let indice = 0;
 
@@ -81,17 +81,14 @@ const musicas = [
 
 playPauseButton.onclick = () => playPause();
 
-  const playPause = () => {
+const playPause = () => {
+   var playPauseIcon = document.getElementById('playPause');
     if (reprodutor.paused) {
+      playPauseIcon.classList.replace('fa-circle-play', 'fa-circle-pause');
       reprodutor.play();
-      console.log(playPauseButton.classList);
-      playPauseButton.classList.replace('fa-circle-pause', 'fa-circle-play');
-      console.log(playPauseButton.classList);
     } else {
+      playPauseIcon.classList.replace('fa-circle-pause', 'fa-circle-play');
       reprodutor.pause();
-      console.log(playPauseButton.classList);
-      playPauseButton.classList.replace('fa-circle-play', 'fa-circle-pause');
-      console.log(playPauseButton.classList);
     }
   };
 
