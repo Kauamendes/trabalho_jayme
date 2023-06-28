@@ -16,9 +16,6 @@ let indice = 0;
 
 //Alguns arquivos de audio estão com erro, necessario baixar e colocar no projeto as seguintes musicas
 //
-// - Avicci - the nights
-// - Eita menina L7NOON
-// - OLD TOWN ROAD
 // - Goosebumps
 //
 //
@@ -39,7 +36,7 @@ const musicas = [
         nomeArtista: "Linkin Park"
       },
       {
-        src: "./music/SnapInsta.io - Avicii - The Nights (128 kbps).mp3",
+        src: "./music/SnapInsta.io - Avicii - The Nights (Lyrics) (320 kbps) (1).mp3",
         img: "https://upload.wikimedia.org/wikipedia/pt/3/39/The_Nights.jpg",
         nome: "The Nights",
         nomeArtista: "Avicii"
@@ -57,13 +54,13 @@ const musicas = [
         nomeArtista: "Yago Oproprio, Rô Rosa"
       },
       {
-        src: "./music/SnapInsta.io - Lagum, L7NNON, Mart'nália - EITA MENINA (128 kbps).mp3",
+        src: "./music/SnapInsta.io - Lagum, L7NNON, Mart'nália - EITA MENINA [Letra] (128 kbps).mp3",
         img: "https://versoseprosas.com.br/wp-content/uploads/2021/07/capa-do-single-eita-menina-lagum.jpg",
         nome: "EITA MENINA",
         nomeArtista: "Lagum, L7NNON, Mart'nália"
       },
       {
-          src: "./music/SnapInsta.io - Lil Nas X - Old Town Road (Official Movie) ft. Billy Ray Cyrus (128 kbps).mp3",
+          src: "./music/SnapInsta.io - Lil Nas X - Old Town Road (Lyrics) ft. Billy Ray Cyrus (128 kbps).mp3",
           img: "https://jpimg.com.br/uploads/2019/07/Old-Town-Road-Video-GQ-2019-051719.jpg",
           nome: "Old Town Road",
           nomeArtista: "Lil Nas X"
@@ -75,7 +72,7 @@ const musicas = [
           nomeArtista: "MC CABELINHO"
         },
         {
-          src: "./music/SnapInsta.io - Travis Scott - goosebumps ft. Kendrick Lamar (128 kbps).mp3",
+          src: "./music/SnapInsta.io - Goosebumps (Lyrics) - Travis Scott, Kendrick Lamar _ RapTunes (128 kbps).mp3",
           img: "https://wallpapercave.com/wp/wp4566148.jpg",
           nome: "Goosebumps",
           nomeArtista: "Travis Scott,  Kendrick Lama"
