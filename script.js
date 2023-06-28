@@ -15,68 +15,78 @@ const textoBotaoPause = "<i class='fas fa-circle-pause' id='botaoPlayPausa'></i>
 let indice = 0;
 let aleatorio = false;
 
-//Alguns arquivos de audio estão com erro, necessario baixar e colocar no projeto as seguintes musicas
-//
-// - Goosebumps
-//
-//
-//
-//
-//
 const musicas = [
     {
+        id: 1,
         src: "./music/[YT2mp3.info] - Costa Gold -  N.A.D.A.B.O.M PT 3 (320kbps).mp3",
         img: "https://akamai.sscdn.co/uploadfile/letras/albuns/3/3/8/0/1064351618577158.jpg",
-        nome: "Costa Gold - N.A.D.A.B.O.M PT 3",
-        nomeArtista: "Costa Gold"
+        nome: "N.A.D.A.B.O.M PT 3",
+        nomeArtista: "Costa Gold",
+        duracao: "3:47"
       },
       {
+        id: 2,
         src: "./music/Numb (Official Music Video) [4K UPGRADE] – Linkin Park.mp3",
         img: "https://upload.wikimedia.org/wikipedia/pt/thumb/b/b9/Linkin_Park_-_Numb_CD_cover.jpg/220px-Linkin_Park_-_Numb_CD_cover.jpg",
-        nome: "Numb - Linkin Park",
-        nomeArtista: "Linkin Park"
+        nome: "Numb",
+        nomeArtista: "Linkin Park",
+        duracao: "3:07"
       },
       {
+        id: 3,
         src: "./music/SnapInsta.io - Avicii - The Nights (Lyrics) (320 kbps) (1).mp3",
         img: "https://upload.wikimedia.org/wikipedia/pt/3/39/The_Nights.jpg",
         nome: "The Nights",
-        nomeArtista: "Avicii"
+        nomeArtista: "Avicii",
+        duracao: "1:38"
       },
       {
+        id: 4,
         src: "./music/SnapInsta.io - Edi Rock - That's My Way ft. Seu Jorge [Video Oficial] (192 kbps).mp3",
         img: "https://i.scdn.co/image/ab67616d0000b2733abf540c3d6d6b6d2f656114",
         nome: "That's My Way",
-        nomeArtista: "Edi Rock, Seu Jorge"
+        nomeArtista: "Edi Rock, Seu Jorge",
+        duracao: "6:48"
       },
       {
+        id: 5,
         src: "./music/SnapInsta.io - Imprevisto - Yago Oproprio ft. Rô Rosa (Clipe Oficial) (128 kbps).mp3",
         img: "https://i1.sndcdn.com/artworks-tjziG5MoYfEzknxV-LRpAeg-t500x500.jpg",
         nome: "Imprevisto",
-        nomeArtista: "Yago Oproprio, Rô Rosa"
+        nomeArtista: "Yago Oproprio, Rô Rosa",
+        duracao: "2:19"
       },
       {
+        id: 6,
         src: "./music/SnapInsta.io - Lagum, L7NNON, Mart'nália - EITA MENINA [Letra] (128 kbps).mp3",
-        img: "https://versoseprosas.com.br/wp-content/uploads/2021/07/capa-do-single-eita-menina-lagum.jpg",
+        img: "./img/eitamenina.jpg",
         nome: "EITA MENINA",
-        nomeArtista: "Lagum, L7NNON, Mart'nália"
+        nomeArtista: "Lagum, L7NNON, Mart'nália",
+        duracao: "3:09"
       },
       {
+        id: 7,
           src: "./music/SnapInsta.io - Lil Nas X - Old Town Road (Lyrics) ft. Billy Ray Cyrus (128 kbps).mp3",
-          img: "https://jpimg.com.br/uploads/2019/07/Old-Town-Road-Video-GQ-2019-051719.jpg",
+          img: "./img/oldtowmroad.jpg",
           nome: "Old Town Road",
-          nomeArtista: "Lil Nas X"
+          nomeArtista: "Lil Nas X",
+          duracao: "2:37"
         },
         {
+          id: 8,
           src: "./music/SnapInsta.io - MC CABELINHO - X1 (prod. DALLASS) (256 kbps).mp3",
-          img: "https://akamai.sscdn.co/uploadfile/letras/albuns/1/b/0/1/01655987029.jpg",
+          img: "https://portalpopline.com.br/wp-content/uploads/2022/10/mc-cabelinho-x1.jpg",
           nome: "X1 (prod. DALLASS)",
-          nomeArtista: "MC CABELINHO"
+          nomeArtista: "MC CABELINHO",
+          duracao: "3:05"
         },
         {
+          id: 9,
           src: "./music/SnapInsta.io - Goosebumps (Lyrics) - Travis Scott, Kendrick Lamar _ RapTunes (128 kbps).mp3",
-          img: "https://wallpapercave.com/wp/wp4566148.jpg",
+          img: "./img/goosebumps.jpg",
           nome: "Goosebumps",
-          nomeArtista: "Travis Scott,  Kendrick Lama"
+          nomeArtista: "Travis Scott,  Kendrick Lama",
+          duracao: "4:13"
         },
   ];
 
@@ -96,28 +106,52 @@ const playPause = () => {
 
   musicas.forEach((musica, indice) => {
     const li = document.createElement("li");
-    const i = document.createElement("i");
+    const num = document.createElement("span");
+    const nomeMusica = document.createElement("span");
+    const nomeArtista = document.createElement("span");
+    const duracao = document.createElement("span");
     const div = document.createElement("div");
-    li.textContent = `${musica.nome} - ${musica.nomeArtista}`;
-    li.setAttribute("id", indice);
-    i.className = "fa-solid fa-music";
-    i.style.color = "#ffffff";
-    lista.appendChild(div);
-    div.appendChild(i);
-    div.appendChild(li);
+    
+    num.textContent = musica.id;
+    num.style.fontSize = "1.2em";
+    num.style.margin = "0";
+    
+    nomeMusica.textContent = musica.nome;
+    nomeMusica.style.fontWeight = "bold";
+    
+    nomeArtista.textContent = musica.nomeArtista;
+    nomeArtista.style.fontSize = "0.8em";
+    
+    duracao.textContent = musica.duracao;
+    duracao.style.marginLeft = "1opx";
+    
+    li.appendChild(div);
+    div.appendChild(num);
+    div.appendChild(nomeMusica);
+    div.appendChild(nomeArtista);
+    div.appendChild(duracao);
+    div.style.display = "flex";
+    div.style.alignItems = "center";
+    div.style.justifyContent = "space-between";
+    
     li.onclick = function() {
       selecionarMusica(indice);
+      getDominantColor(musica.img, applyDominantColorToBackground);
     };
-
+    
     li.addEventListener("mouseenter", function() {
       li.style.color = "#1db954";
       li.style.cursor = "pointer";
     });
-  
+    
     li.addEventListener("mouseleave", function() {
       li.style.color = "#ffffff";
     });
+    
+    lista.appendChild(li);
   });
+
+  
   
   
 
@@ -147,13 +181,16 @@ function selecionarMusica(musicaNoIndice) {
       indice = 0;
     }
 
-  reprodutor.src = musicas[indice].src;
-  nomeMusica.innerHTML = musicas[indice].nome;
-  nomeArtista.innerHTML = musicas[indice].nomeArtista;
-  imagemMusica.src = musicas[indice].img;
+  var musica = musicas[indice];
+  reprodutor.src = musica.src;
+  nomeMusica.innerHTML = musica.nome;
+  nomeArtista.innerHTML = musica.nomeArtista;
+  imagemMusica.src = musica.img;
   if (tipo !== "iniciar") playPause();
 
   iniciarAtualizacaoTempo();
+  // Chama a função para obter a cor predominante da imagem e aplicá-la ao fundo
+  getDominantColor(musica.img, applyDominantColorToBackground);
 }
 
 function randomInt(min, max) {
@@ -221,6 +258,26 @@ function iniciarAtualizacaoTempo() {
       atualizarTempo(); // Chama a função para atualizar o tempo
     }
   }, 1000); // Intervalo de 1 segundo (1000 milissegundos)
+}
+
+// Obtém a cor predominante da imagem
+function getDominantColor(imageUrl, callback) {
+  var image = new Image();
+  image.crossOrigin = "Anonymous";
+  image.src = imageUrl;
+
+  image.onload = function() {
+    var colorThief = new ColorThief();
+    var color = colorThief.getColor(image);
+    callback(color);
+  };
+}
+
+// Aplica a cor predominante ao fundo da página
+function applyDominantColorToBackground(color) {
+  var rgbColor = "rgb(" + color[0] + ", " + color[1] + ", " + color[2] + ")";
+  console.log(rgbColor);
+  document.body.style.backgroundColor = rgbColor;
 }
 
 
