@@ -136,6 +136,9 @@ function randomInt(min, max) {
 
 
 progresso.onclick = (e) => {
+  if(reprodutor.paused) {
+    reprodutor.play();
+  }
   const newTime = (e.offsetX / barraProgresso.offsetWidth) * reprodutor.duration;
   reprodutor.currentTime = newTime;
 };
