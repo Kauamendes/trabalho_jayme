@@ -94,8 +94,14 @@ function playPause() {
 
   musicas.forEach((musica) => {
     const li = document.createElement("li");
+    const i = document.createElement("i");
+    const div = document.createElement("div");
     li.textContent = `${musica.nome} - ${musica.nomeArtista}`;
-    lista.appendChild(li);
+    i.className = "fa-solid fa-music";
+    i.style = 'color: #ffffff;';
+    lista.appendChild(div);
+    div.appendChild(i);
+    div.appendChild(li);
 });
 
 
