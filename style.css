@@ -88,6 +88,9 @@ body {
   }
   
   .fa-circle-play:hover,
+  .fa-backward-step:hover,
+  .fa-forward-step:hover,
+  .fa-shuffle:hover,
   .fa-pause:hover {
     color: #1db954;
   }
