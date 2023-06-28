@@ -49,9 +49,12 @@ body {
 
   progress {
     width: 100%;
-    
+    background-color: #1db954;
   }
 
+  progress::-webkit-progress-value {
+    background-color: #1db954;
+  }
 
   .duracao {
     display: flex;
