@@ -12,9 +12,12 @@
 <body>
     <img id="imagemMusica">
     <div class="descricao">
-        <h2 id="nomeMusica">Nome da Musica</h2>
-        <i id="nomeArtista">João de Tal</i>
+        <h2 id="nomeMusica"></h2>
+        <i id="nomeArtista"></i>
     </div>
+    <ul id="listaMusicas">
+        <!-- A lista será preenchida dinamicamente com JavaScript -->
+    </ul>
     <div class="duracao">
         <div>
             <p class="progresso-inicio" id="tempoAtual">0:00</p>
@@ -27,12 +30,12 @@
         </div>
     </div>
     <div class="player">
-        <i class="fa-solid fa-backward-step" onclick="tocarProximaOuAnterior('anterior')"></i>
-        <i class="fa-solid fa-circle-play" id="playPause" onclick="playPause()"></i>
-        <i class="fa-solid fa-forward-step" id="proxima" onclick="tocarProximaOuAnterior('proxima')"></i>
+        <i class="fas fa-backward-step" onclick="tocarProximaOuAnterior('anterior')"></i>
+        <i class="fas fa-circle-play" id="playPause" onclick="playPause()"></i>
+        <i class="fas fa-forward-step" id="proxima" onclick="tocarProximaOuAnterior('proxima')"></i>
     </div>    
 
     <audio id="reprodutor"></audio>
+    <script src="./script.js"></script>
 </body>
-<script src="./script.js"></script>
 </html>

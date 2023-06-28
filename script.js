@@ -6,6 +6,7 @@ const tempoAtual = document.getElementById("tempoAtual");
 const duracaoTotal = document.getElementById("duracaoTotal");
 const barraProgresso = document.getElementById("barra-progresso");
 const progresso = document.getElementById("progresso");
+const lista = document.getElementById("listaMusicas");
 
 const textoBotaoPlay = "<i class='fa-solid fa-circle-play' id='botaoPlayPausa'></i>";
 const textoBotaoPause = "<i class='fa-solid fa-circle-pause' id='botaoPlayPausa'></i>";
@@ -91,6 +92,13 @@ function playPause() {
     }
   }
 
+  musicas.forEach((musica) => {
+    const li = document.createElement("li");
+    li.textContent = `${musica.nome} - ${musica.nomeArtista}`;
+    lista.appendChild(li);
+});
+
+
   function tocarProximaOuAnterior(tipo) {
     console.log(tipo)
     if(tipo === "aleatorio") {
@@ -126,14 +134,14 @@ function atualizarTempo() {
     const minutosAtuais = Math.floor(reprodutor.currentTime / 60);
     const segundosAtuais = Math.floor(reprodutor.currentTime % 60);
     tempoAtual.textContent = `${minutosAtuais}:${formatarZero(segundosAtuais)}`;
-  
+
     const duracaoFormatada = isNaN(reprodutor.duration) ? 0 : reprodutor.duration;
     const minutosDuracao = Math.floor(duracaoFormatada / 60);
     const segundosDuracao = Math.floor(duracaoFormatada % 60);
     duracaoTotal.textContent = `${minutosDuracao}:${formatarZero(segundosDuracao)}`;
-  
+
     const larguraProgresso = duracaoFormatada ? (reprodutor.currentTime / duracaoFormatada) * 100 : 0;
-  
+console.log(progresso);
     progresso.style.width = `${larguraProgresso}%`;
 }
 

@@ -91,3 +91,25 @@ body {
     color: #1db954;
   }
   
+  #listaMusicas {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    margin-top: 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 20%;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 999;
+  }
+  
+  #listaMusicas li {
+    display: flex;
+    background-color: #191818;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #e5e5e5;
+    border-radius: 12px;
+  }
+  
