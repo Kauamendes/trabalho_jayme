@@ -104,7 +104,7 @@ const playPause = () => {
     }
   };
 
-  musicas.forEach((musica, indice) => {
+  musicas.forEach((musica) => {
     const li = document.createElement("li");
     const div = document.createElement("div");
     const divLista = document.createElement("div");
@@ -144,7 +144,7 @@ const playPause = () => {
     li.appendChild(divLista);
   
     li.onclick = function() {
-      selecionarMusica(indice);
+      selecionarMusica(musica.id-1);
       getDominantColor(musica.img, applyDominantColorToBackground);
     };
   
@@ -155,7 +155,7 @@ const playPause = () => {
     li.addEventListener("mouseleave", function() {
       li.classList.remove("hovered");
     });
-    
+
     li.style.borderBottom = "1px solid white";
     lista.appendChild(li);
   });
