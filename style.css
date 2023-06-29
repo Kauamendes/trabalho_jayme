@@ -4,174 +4,223 @@
 }
 
 body {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    background-color: #282828;
-    color: #fff;
-    font-family: Arial, sans-serif;
-  }
-  
-  img {
-    width: 400px;
-    height: 400px;
-    border-radius: 8px;
-    margin-bottom: 20px;
-  }
-  
-  .descricao {
-    text-align: center;
-  }
-  
-  h2 {
-    font-size: 24px;
-    margin-bottom: 5px;
-  }
-  
-  i {
-    font-style: italic;
-    font-size: 18px;
-    color: #b3b3b3;
-  }
-  
-  .progresso-container {
-    position: relative;
-    width: 50%;
-    height: 10px;
-    border-radius: 5px;
-    display: flex;
-    justify-content: start;
-    align-items: start;
-  }
-  
-
-  progress {
-    width: 100%;
-    height: 70%;
-    background-color: #1db954;
-  }
-
-  progress::-webkit-progress-value {
-    background-color: #1db954;
-  }
-
-  .duracao {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 20px;
-    width: 60%;
-    gap: 2vw;
-  }
-  
-  .tempo {
-    display: flex;
-    justify-content: space-between;
-    color: #b3b3b3;
-    font-size: 14px;
-    margin-top: 8px;
-    width: 100%;
-  }
-  
-  .player {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 20px;
-  }
-  
-  .fa-backward-step,
-  .fa-circle-play,
-  .fa-circle-pause,
-  .fa-shuffle,
-  .fa-forward-step {
-    font-size: 32px;
-    color: #fff;
-    margin: 0 20px;
-    cursor: pointer;
-  }
-  
-  .fa-circle-play:hover,
-  .fa-backward-step:hover,
-  .fa-forward-step:hover,
-  .fa-shuffle:hover,
-  .fa-pause:hover {
-    color: #1db954;
-  }
-  
-  #listaMusicas {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    position: fixed;
-    background-color: #191818;
-    top: 0;
-    left: 0;
-    width: 20%;
-    height: 100%;
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
-    z-index: 999;
-  }
-  
-  #listaMusicas li {
-    display: flex;
-    background-color: #191818;
-    align-items: center;
-    padding: 10px;
-    border-radius: 0px;
-    height: 5vh;
-    justify-content: flex-start;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #282828;
+  color: #fff;
+  font-family: Arial, sans-serif;
 }
 
-  #listaMusicas div {
-    display:flex; 
-    justify-content:center; 
-    align-items:center; 
-    background-color:#191818;
-    border-bottom: 1px solid #e5e5e5;
-    padding: 0 2vw;
-  }
-  
-  .sidebar {
-    display: flex;
-    justify-content: start;
-    flex-direction: row-reverse;
-  }
-  
-  .menu {
-    width: 100%;
-    max-height: 100%;
-    background-color: #f1f1f1;
-    transition: transform 0.3s ease;
-    transform: translateX(-100%);
-  }
-  
-  .show-menu {
-    transform: translateX(0);
-  }
-  
-  .toggle-btn {
-    font-size: 42px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 10px;
-    width: 2vw;
-    height: 100%;
-    cursor: pointer;
-    position: fixed;
-    top: 0;
-    left: 1%;
-    transition: 0.3s ease;
-  }
+img {
+  width: 400px;
+  height: 400px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
 
-  .toggle-btn-on {
-    top: 0;
-    left: 20%;
-  }
+.descricao {
+  text-align: center;
+}
 
-  .ativo {
-    color: #1db954; /* Cor de fundo verde */
-  }
+h2 {
+  font-size: 24px;
+  margin-bottom: 5px;
+}
+
+i {
+  font-style: italic;
+  font-size: 18px;
+  color: #b3b3b3;
+}
+
+.progresso-container {
+  position: relative;
+  width: 50%;
+  height: 10px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: start;
+  align-items: start;
+}
+
+progress {
+  width: 100%;
+  height: 70%;
+  background-color: #1db954;
+}
+
+progress::-webkit-progress-value {
+  background-color: #1db954;
+}
+
+.duracao {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+  left: 20%;
+  width: 60%;
+  gap: 2vw;
+}
+
+.tempo {
+  display: flex;
+  justify-content: space-between;
+  color: #b3b3b3;
+  font-size: 14px;
+  margin-top: 8px;
+  width: 100%;
+}
+
+.player {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.fa-backward-step,
+.fa-circle-play,
+.fa-circle-pause,
+.fa-shuffle,
+.fa-forward-step {
+  font-size: 32px;
+  color: #fff;
+  margin: 0 20px;
+  cursor: pointer;
+}
+
+.fa-circle-play:hover,
+.fa-backward-step:hover,
+.fa-forward-step:hover,
+.fa-shuffle:hover,
+.fa-pause:hover {
+  color: #1db954;
+}
+
+#listaMusicas {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  position: fixed;
+  background-color: #191818;
+  top: 0;
+  left: 0;
+  width: 20%;
+  height: 100%;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 999;
+}
+
+#listaMusicas li {
+  display: flex;
+  background-color: #191818;
+  align-items: center;
+  border-radius: 0px;
+  height: 11vh;
+  justify-content: flex-start;
+}
+
+#listaMusicas div {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #191818;
+  padding: 0vw;
+}
+
+.sidebar {
+  display: flex;
+  justify-content: start;
+  flex-direction: row-reverse;
+}
+
+.menu {
+  width: 100%;
+  max-height: 100%;
+  background-color: #f1f1f1;
+  transition: transform 0.3s ease;
+  transform: translateX(-100%);
+}
+
+.show-menu {
+  transform: translateX(0);
+}
+
+.toggle-btn {
+  font-size: 42px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  width: 2vw;
+  height: 100%;
+  cursor: pointer;
+  position: fixed;
+  top: 0;
+  left: 1%;
+  transition: 0.3s ease;
+}
+
+.toggle-btn-on {
+  top: 0;
+  left: 20%;
+}
+
+.ativo {
+  color: #1db954;
+}
+
+.item-container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: #191818;
+  padding: 10px 2vw;
+}
+
+.num {
+  font-size: 1.2em;
+  margin-right: 10px;
+}
+
+.nome-musica {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 5px;
+  white-space: nowrap;
+}
+
+.nome-artista {
+  font-size: 0.8em;
+  display: block;
+  white-space: nowrap;
+}
+
+.hovered {
+  color: #1db954;
+  cursor: pointer;
+}
+
+.duracaoLista {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-top: 20px;
+  width: 60%;
+  gap: 2vw;
+  padding: 0; /* Adicionado */
+}
+
+.num-container .num {
+  margin-right: 0;
+}
+
+.duracao-container {
+  padding: 0; /* Adicionado */
+}

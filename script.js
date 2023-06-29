@@ -106,54 +106,59 @@ const playPause = () => {
 
   musicas.forEach((musica, indice) => {
     const li = document.createElement("li");
+    const div = document.createElement("div");
+    const divLista = document.createElement("div");
+    const divNum = document.createElement("div");
+    const divDuracao = document.createElement("div");
     const num = document.createElement("span");
     const nomeMusica = document.createElement("span");
     const nomeArtista = document.createElement("span");
     const duracao = document.createElement("span");
-    const div = document.createElement("div");
-    
+  
     num.textContent = musica.id;
-    num.style.fontSize = "1.2em";
-    num.style.margin = "0";
-    
+    num.className = "num";
+  
     nomeMusica.textContent = musica.nome;
-    nomeMusica.style.fontWeight = "bold";
-    
+    nomeMusica.className = "nome-musica";
+  
     nomeArtista.textContent = musica.nomeArtista;
-    nomeArtista.style.fontSize = "0.8em";
-    
+    nomeArtista.className = "nome-artista";
+  
     duracao.textContent = musica.duracao;
-    duracao.style.marginLeft = "1opx";
-    
-    li.appendChild(div);
-    div.appendChild(num);
+    duracao.className = "duracaoLista";
+  
+    divNum.appendChild(num);
+    divNum.className = "num-container";
+    divLista.appendChild(divNum);
+    divLista.appendChild(div);
+  
     div.appendChild(nomeMusica);
     div.appendChild(nomeArtista);
-    div.appendChild(duracao);
-    div.style.display = "flex";
-    div.style.alignItems = "center";
-    div.style.justifyContent = "space-between";
-    
+  
+    divDuracao.appendChild(duracao);
+    divDuracao.className = "duracao-container";
+    divLista.appendChild(divDuracao);
+  
+    div.className = "item-container";
+  
+    li.appendChild(divLista);
+  
     li.onclick = function() {
       selecionarMusica(indice);
       getDominantColor(musica.img, applyDominantColorToBackground);
     };
-    
+  
     li.addEventListener("mouseenter", function() {
-      li.style.color = "#1db954";
-      li.style.cursor = "pointer";
+      li.classList.add("hovered");
     });
-    
+  
     li.addEventListener("mouseleave", function() {
-      li.style.color = "#ffffff";
+      li.classList.remove("hovered");
     });
     
+    li.style.borderBottom = "1px solid white";
     lista.appendChild(li);
   });
-
-  
-  
-  
 
 function selecionarMusica(musicaNoIndice) {
   indice = musicaNoIndice;
