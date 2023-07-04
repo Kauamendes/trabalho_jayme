@@ -14,6 +14,7 @@ const textoBotaoPause = "<i class='fas fa-circle-pause' id='botaoPlayPausa'></i>
 
 let indice = 0;
 let aleatorio = false;
+let repetir = false;
 
 const musicas = [
     {
@@ -78,7 +79,7 @@ const musicas = [
           img: "https://portalpopline.com.br/wp-content/uploads/2022/10/mc-cabelinho-x1.jpg",
           nome: "X1 (prod. DALLASS)",
           nomeArtista: "MC CABELINHO",
-          duracao: "3:05"
+          duracao: "3:04"
         },
         {
           id: 9,
@@ -172,7 +173,10 @@ function selecionarMusica(musicaNoIndice) {
 }
 
   function tocarProximaOuAnterior(tipo) {
-    if(aleatorio) {
+    if (repetir) {
+      return;
+    }
+    if (aleatorio) {
       do {
       var indiceAleatorio = randomInt(0, musicas.length - 1);
       } while (indice == indiceAleatorio);
@@ -228,8 +232,12 @@ function atualizarTempo() {
 
   const larguraProgresso = duracaoFormatada ? (reprodutor.currentTime / duracaoFormatada) * 100 : 0;
   progresso.value = larguraProgresso;
-}
 
+  if (reprodutor.currentTime >= duracaoFormatada-1) {
+    tocarProximaOuAnterior("proxima");
+  }
+
+}
 
 function formatarZero(n) {
   return n < 10 ? "0" + n : n;
@@ -245,10 +253,19 @@ function toggleMenu() {
 }
 
 function ativarAleatorio() {
-  console.log("aquii");
   aleatorio = !aleatorio;
   const aleatorioIcon = document.getElementById("aleatorio");
   if(aleatorio) {
+    aleatorioIcon.classList.add('ativo');
+  } else {
+    aleatorioIcon.classList.remove('ativo');
+  }
+}
+
+function ativarRepetir() {
+  repetir = !repetir;
+  const aleatorioIcon = document.getElementById("repetir");
+  if(repetir) {
     aleatorioIcon.classList.add('ativo');
   } else {
     aleatorioIcon.classList.remove('ativo');
@@ -281,7 +298,6 @@ function getDominantColor(imageUrl, callback) {
 // Aplica a cor predominante ao fundo da página
 function applyDominantColorToBackground(color) {
   var rgbColor = "rgb(" + color[0] + ", " + color[1] + ", " + color[2] + ")";
-  console.log(rgbColor);
   document.body.style.backgroundColor = rgbColor;
 }
 

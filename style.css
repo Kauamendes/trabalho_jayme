@@ -109,6 +109,7 @@ progress::-moz-progress-bar {
 .fa-circle-play,
 .fa-circle-pause,
 .fa-shuffle,
+.fa-repeat,
 .fa-forward-step {
   font-size: 32px;
   color: #fff;
@@ -119,6 +120,7 @@ progress::-moz-progress-bar {
 .fa-circle-play:hover,
 .fa-backward-step:hover,
 .fa-forward-step:hover,
+.fa-repeat:hover,
 .fa-shuffle:hover,
 .fa-pause:hover {
   color: #8A2BE2;
