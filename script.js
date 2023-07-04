@@ -98,7 +98,6 @@ const playPause = () => {
     if (reprodutor.paused) {
       playPauseIcon.classList.replace('fa-circle-play', 'fa-circle-pause');
       reprodutor.play();
-      iniciarAtualizacaoTempo();
     } else {
       playPauseIcon.classList.replace('fa-circle-pause', 'fa-circle-play');
       reprodutor.pause();
@@ -173,16 +172,24 @@ function selecionarMusica(musicaNoIndice) {
 }
 
   function tocarProximaOuAnterior(tipo) {
+    if (tipo === "" && repetir) {
+      let aleatorioIcon = document.getElementById("repetir");
+      reprodutor.currentTime = 0;
+      repetir = !repetir;
+      aleatorioIcon.classList.remove('ativo');
+    } 
     if (repetir) {
-      return;
+      let aleatorioIcon = document.getElementById("repetir");
+      repetir = !repetir;
+      aleatorioIcon.classList.remove('ativo');
     }
-    if (aleatorio) {
+    else if (aleatorio) {
       do {
       var indiceAleatorio = randomInt(0, musicas.length - 1);
       } while (indice == indiceAleatorio);
       indice = indiceAleatorio;
     }
-    if (tipo === "proxima") {
+    else if (tipo === "proxima") {
       indice = (indice + 1) % musicas.length;
     } else if (tipo === "anterior") {
       indice = (indice - 1 + musicas.length) % musicas.length;
@@ -237,7 +244,7 @@ function atualizarTempo() {
   progresso.value = larguraProgresso;
 
   if (reprodutor.currentTime >= duracaoFormatada-1) {
-    tocarProximaOuAnterior("proxima");
+    tocarProximaOuAnterior();
   }
 
 }
