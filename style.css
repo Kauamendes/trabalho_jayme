@@ -1,3 +1,17 @@
+/* 
+#FF3E3E (vermelho vibrante)
+#FFD700 (dourado)
+#00FF00 (verde limão)
+#4B0082 (índigo)
+#FFA500 (laranja)
+*/
+
+.logo img {
+  width: 100px; /* Ajuste o valor conforme necessário */
+  height: 100px; /* Ajuste o valor conforme necessário */
+}
+
+
 * {
   padding: 0;
   margin: 0;
@@ -49,12 +63,21 @@ i {
 progress {
   width: 100%;
   height: 70%;
-  background-color: #1db954;
+  background-color: #eee;
 }
 
-progress::-webkit-progress-value {
-  background-color: #1db954;
+progress::-moz-progress-bar {
+  background: #8A2BE2;
 }
+
+@-webkit-keyframes animate-stripes {
+  100% { background-position: -100px 0px; }
+}
+
+@keyframes animate-stripes {
+  100% { background-position: -100px 0px; }
+}
+
 
 .duracao {
   display: flex;
@@ -98,7 +121,7 @@ progress::-webkit-progress-value {
 .fa-forward-step:hover,
 .fa-shuffle:hover,
 .fa-pause:hover {
-  color: #1db954;
+  color: #8A2BE2;
 }
 
 #listaMusicas {
@@ -172,7 +195,7 @@ progress::-webkit-progress-value {
 }
 
 .ativo {
-  color: #1db954;
+  color: #8A2BE2;
 }
 
 .item-container {
@@ -203,7 +226,7 @@ progress::-webkit-progress-value {
 }
 
 .hovered {
-  color: #1db954;
+  color: #8A2BE2;
   cursor: pointer;
 }
 
