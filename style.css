@@ -7,10 +7,15 @@
 */
 
 .logo img {
-  width: 100px; /* Ajuste o valor conforme necessário */
-  height: 100px; /* Ajuste o valor conforme necessário */
+  width: 100px;
+  height: 100px;
 }
 
+.logo {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
 
 * {
   padding: 0;

@@ -190,7 +190,7 @@ function selecionarMusica(musicaNoIndice) {
       indice = 0;
     }
 
-  var musica = musicas[indice];
+  let musica = musicas[indice];
   reprodutor.src = musica.src;
   nomeMusica.innerHTML = musica.nome;
   nomeArtista.innerHTML = musica.nomeArtista;
@@ -209,8 +209,11 @@ function randomInt(min, max) {
 
 progresso.onclick = (e) => {
   if(reprodutor.paused) {
+    let playPauseIcon = document.getElementById('playPause');
     reprodutor.play();
+    playPauseIcon.classList.replace('fa-circle-play', 'fa-circle-pause');
   }
+
   const newTime = (e.offsetX / barraProgresso.offsetWidth) * reprodutor.duration;
   reprodutor.currentTime = newTime;
   iniciarAtualizacaoTempo();
