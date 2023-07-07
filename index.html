@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="./img/logoSemFundo.svg" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/76bc1f900d.js" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/color-thief/2.3.0/color-thief.umd.js"></script>
     <title>SoundWave</title>
@@ -42,11 +45,11 @@
         </div>
       </div>            
     <div class="player">
-        <i class="fas fa-random" id="aleatorio" onclick="ativarAleatorio()"></i>
-        <i class="fas fa-backward-step" onclick="tocarProximaOuAnterior('anterior')"></i>
-        <i class="fas fa-circle-play" id="playPause" onclick="playPause()"></i>
-        <i class="fas fa-forward-step" id="proxima" onclick="tocarProximaOuAnterior('proxima')"></i>
-        <i class="fas fa-repeat" id="repetir" onclick="ativarRepetir()"></i>
+        <i class="fas fa-thin fa-shuffle" id="aleatorio" onclick="ativarAleatorio()"></i>
+        <i class="fas fa-thin fa-backward-step" onclick="tocarProximaOuAnterior('anterior')"></i>
+        <i class="fas fa-thin fa-play" id="playPause" onclick="playPause()"></i>
+        <i class="fas fa-thin fa-forward-step" id="proxima" onclick="tocarProximaOuAnterior('proxima')"></i>
+        <i class="fas fa-thin fa-repeat" id="repetir" onclick="ativarRepetir()"></i>
     </div>    
 
     <audio id="reprodutor"></audio>

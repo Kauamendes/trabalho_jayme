@@ -9,8 +9,8 @@ const progresso = document.getElementById("barra-progresso");
 const lista = document.getElementById("listaMusicas");
 const playPauseButton = document.getElementById("playPause");
 
-const textoBotaoPlay = "<i class='fas fa-circle-play' id='botaoPlayPausa'></i>";
-const textoBotaoPause = "<i class='fas fa-circle-pause' id='botaoPlayPausa'></i>";
+const textoBotaoPlay = "<i class='fa-thin fa-play' id='botaoPlayPausa'></i>";
+const textoBotaoPause = "<i class='fa-thin fa-pause' id='botaoPlayPausa'></i>";
 
 let indice = 0;
 let aleatorio = false;
@@ -96,10 +96,10 @@ playPauseButton.onclick = () => playPause();
 const playPause = () => {
    const playPauseIcon = document.getElementById('playPause');
     if (reprodutor.paused) {
-      playPauseIcon.classList.replace('fa-circle-play', 'fa-circle-pause');
+      playPauseIcon.classList.replace('fa-thin fa-play', 'fa-thin fa-pause');
       reprodutor.play();
     } else {
-      playPauseIcon.classList.replace('fa-circle-pause', 'fa-circle-play');
+      playPauseIcon.classList.replace('fa-thin fa-pause', 'fa-thin fa-play');
       reprodutor.pause();
     }
   };
@@ -218,7 +218,7 @@ progresso.onclick = (e) => {
   if(reprodutor.paused) {
     let playPauseIcon = document.getElementById('playPause');
     reprodutor.play();
-    playPauseIcon.classList.replace('fa-circle-play', 'fa-circle-pause');
+    playPauseIcon.classList.replace('fa-thin fa-play', 'fa-thin fa-pause');
   }
 
   const newTime = (e.offsetX / barraProgresso.offsetWidth) * reprodutor.duration;
