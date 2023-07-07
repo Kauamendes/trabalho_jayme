@@ -6,6 +6,10 @@
 #FFA500 (laranja)
 */
 
+span {
+  font-family: 'Roboto', sans-serif;
+}
+
 .logo img {
   width: 100px;
   height: 100px;
