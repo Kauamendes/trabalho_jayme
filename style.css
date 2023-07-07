@@ -110,24 +110,26 @@ progress::-moz-progress-bar {
   margin-top: 20px;
 }
 
-.fa-backward-step,
-.fa-circle-play,
-.fa-circle-pause,
-.fa-shuffle,
-.fa-repeat,
-.fa-forward-step {
+.bi-shuffle,
+.bi-skip-backward,
+.bi-pause,
+.bi-play-circle,
+.bi-repeat,
+.bi-chevron-double-right,
+.bi-skip-forward {
   font-size: 32px;
   color: #fff;
   margin: 0 20px;
   cursor: pointer;
 }
 
-.fa-circle-play:hover,
-.fa-backward-step:hover,
-.fa-forward-step:hover,
-.fa-repeat:hover,
-.fa-shuffle:hover,
-.fa-pause:hover {
+.bi-play-circle:hover,
+.bi-skip-backward:hover,
+.bi-skip-forward:hover,
+.bi-repeat:hover,
+.bi-shuffle:hover,
+.bi-chevron-double-right,
+.bi-pause:hover {
   color: #8A2BE2;
 }
 
