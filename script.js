@@ -9,8 +9,8 @@ const progresso = document.getElementById("barra-progresso");
 const lista = document.getElementById("listaMusicas");
 const playPauseButton = document.getElementById("playPause");
 
-const textoBotaoPlay = "<i class='fa-thin fa-play' id='botaoPlayPausa'></i>";
-const textoBotaoPause = "<i class='fa-thin fa-pause' id='botaoPlayPausa'></i>";
+const textoBotaoPlay = "<i class='bi-play-circle' id='botaoPlayPausa'></i>";
+const textoBotaoPause = "<i class='bi-pause' id='botaoPlayPausa'></i>";
 
 let indice = 0;
 let aleatorio = false;
@@ -96,10 +96,10 @@ playPauseButton.onclick = () => playPause();
 const playPause = () => {
    const playPauseIcon = document.getElementById('playPause');
     if (reprodutor.paused) {
-      playPauseIcon.classList.replace('fa-thin fa-play', 'fa-thin fa-pause');
+      playPauseIcon.classList.replace('bi-play-circle', 'bi-pause');
       reprodutor.play();
     } else {
-      playPauseIcon.classList.replace('fa-thin fa-pause', 'fa-thin fa-play');
+      playPauseIcon.classList.replace('bi-pause', 'bi-play-circle');
       reprodutor.pause();
     }
   };
@@ -218,7 +218,7 @@ progresso.onclick = (e) => {
   if(reprodutor.paused) {
     let playPauseIcon = document.getElementById('playPause');
     reprodutor.play();
-    playPauseIcon.classList.replace('fa-thin fa-play', 'fa-thin fa-pause');
+    playPauseIcon.classList.replace('bi-play-circle', 'bi-pause');
   }
 
   const newTime = (e.offsetX / barraProgresso.offsetWidth) * reprodutor.duration;
@@ -308,7 +308,8 @@ function getDominantColor(imageUrl, callback) {
 // Aplica a cor predominante ao fundo da página
 function applyDominantColorToBackground(color) {
   var rgbColor = "rgb(" + color[0] + ", " + color[1] + ", " + color[2] + ")";
-  document.body.style.backgroundColor = rgbColor;
+  var gradientColor = "linear-gradient(to top, " + rgbColor + ", white)";
+  document.body.style.background = gradientColor;
 }
 
 
