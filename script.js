@@ -245,7 +245,7 @@ function atualizarTempo() {
   progresso.value = larguraProgresso;
 
   if (reprodutor.currentTime >= duracaoFormatada-1) {
-    tocarProximaOuAnterior();
+    tocarProximaOuAnterior("proxima");
   }
 
 }
