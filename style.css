@@ -1,11 +1,3 @@
-/* 
-#FF3E3E (vermelho vibrante)
-#FFD700 (dourado)
-#00FF00 (verde limão)
-#4B0082 (índigo)
-#FFA500 (laranja)
-*/
-
 span {
   font-family: 'Roboto', sans-serif;
 }
@@ -250,7 +242,7 @@ progress::-moz-progress-bar {
   margin-top: 20px;
   width: 60%;
   gap: 2vw;
-  padding: 0; /* Adicionado */
+  padding: 0; 
 }
 
 .num-container .num {
@@ -258,5 +250,5 @@ progress::-moz-progress-bar {
 }
 
 .duracao-container {
-  padding: 0; /* Adicionado */
+  padding: 0;
 }

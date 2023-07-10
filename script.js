@@ -311,6 +311,3 @@ function applyDominantColorToBackground(color) {
   var gradientColor = "linear-gradient(to top, " + rgbColor + ", white)";
   document.body.style.background = gradientColor;
 }
-
-
-
