@@ -98,6 +98,7 @@ const playPause = () => {
     if (reprodutor.paused) {
       playPauseIcon.classList.replace('bi-play-circle', 'bi-pause');
       reprodutor.play();
+      iniciarAtualizacaoTempo();
     } else {
       playPauseIcon.classList.replace('bi-pause', 'bi-play-circle');
       reprodutor.pause();
