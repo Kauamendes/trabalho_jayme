@@ -319,6 +319,11 @@ function getDominantColor(imageUrl, callback) {
 // Aplica a cor predominante ao fundo da página
 function applyDominantColorToBackground(color) {
   var rgbColor = "rgb(" + color[0] + ", " + color[1] + ", " + color[2] + ")";
-  var gradientColor = "linear-gradient(to top, " + rgbColor + ", white)";
-  document.body.style.background = gradientColor;
+  
+  if (window.innerWidth > 768) {
+    var gradientColor = "linear-gradient(to top, " + rgbColor + ", white)";
+    document.body.style.background = gradientColor;
+  } else {
+    document.body.style.background = rgbColor;
+  }
 }

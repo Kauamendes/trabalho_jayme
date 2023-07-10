@@ -124,6 +124,7 @@ progress::-moz-progress-bar {
 .bi-skip-forward:hover,
 .bi-repeat:hover,
 .bi-shuffle:hover,
+.bi-chevron-double-right:hover
 .bi-pause:hover {
   color: #8A2BE2;
 }
