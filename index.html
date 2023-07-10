@@ -19,40 +19,44 @@
     <img src="./img/logoSemFundo.svg">
   </div>
 
-    <img id="imagemMusica">
-    <div class="descricao">
-        <h2 id="nomeMusica"></h2>
-        <i id="nomeArtista"></i>
-    </div>
+  <div class="toggle-btn" id="toggle-btn">
+    <i class="bi bi-chevron-double-right"></i>
+  </div>
 
-    <div class="sidebar">
-        <div class="toggle-btn" id="toggle-btn" onclick="toggleMenu()"><i class="bi bi-chevron-double-right"></i></div>
-        <div style="width:100%; height:100%;">
-            <ul id="listaMusicas" class="menu">
-                <!-- A lista será preenchida dinamicamente com JavaScript -->
-            </ul>
-        </div>
-    </div>      
-    <div class="duracao">
-        <div>
-          <p class="progresso-inicio" id="tempoAtual">0:00</p>
-        </div>
-        <div class="progresso-container">
-          <progress value="0" max="100" id="barra-progresso"></progress>
-        </div>        
-        <div>
-          <p class="progresso-fim" id="duracaoTotal">3:06</p>
-        </div>
-      </div>            
-    <div class="player">
+  <img id="imagemMusica">
+  <div class="descricao">
+    <h2 id="nomeMusica"></h2>
+    <i id="nomeArtista"></i>
+  </div>
+
+  <div class="duracao">
+    <div>
+      <p class="progresso-inicio" id="tempoAtual">0:00</p>
+    </div>
+    <div class="progresso-container">
+      <progress value="0" max="100" id="barra-progresso"></progress>
+    </div>        
+    <div>
+      <p class="progresso-fim" id="duracaoTotal">3:06</p>
+    </div>
+  </div>            
+
+  <div class="sidebar">
+    <div style="width:100%; height:100%;">
+      <div class="player">
         <i class="bi bi-shuffle" id="aleatorio" onclick="ativarAleatorio()"></i>
         <i class="bi bi-skip-backward" onclick="tocarProximaOuAnterior('anterior')"></i>
         <i class="bi bi-play-circle" id="playPause" onclick="playPause()"></i>
         <i class="bi bi-skip-forward" id="proxima" onclick="tocarProximaOuAnterior('proxima')"></i>
         <i class="bi bi-repeat" id="repetir" onclick="ativarRepetir()"></i>
-    </div>    
+      </div>
+      <ul id="listaMusicas" class="menu">
+        <!-- A lista será preenchida dinamicamente com JavaScript -->
+      </ul>
+    </div>
+  </div>
 
-    <audio id="reprodutor"></audio>
-    <script src="./script.js"></script>
+  <audio id="reprodutor"></audio>
+  <script src="./script.js"></script>
 </body>
 </html>

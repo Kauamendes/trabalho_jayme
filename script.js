@@ -255,11 +255,22 @@ function formatarZero(n) {
 
 tocarProximaOuAnterior("iniciar");
 
+const toggleButton = document.getElementById('toggle-btn');
+toggleButton.addEventListener('click', toggleMenu);
+
 function toggleMenu() {
   const listaMusicas = document.getElementById('listaMusicas');
   const toggleButton = document.getElementById('toggle-btn');
-  listaMusicas.classList.toggle('show-menu');
-  toggleButton.classList.toggle('toggle-btn-on');
+  const isMenuVisible = listaMusicas.classList.contains('show-menu');
+console.log(isMenuVisible);
+  if (isMenuVisible) {
+    toggleButton.classList.remove('toggle-btn-on');
+    listaMusicas.classList.remove('show-menu');
+  } else {
+    toggleButton.classList.add('toggle-btn-on');
+    listaMusicas.classList.add('show-menu');
+  }
+  console.log(isMenuVisible);
 }
 
 function ativarAleatorio() {
