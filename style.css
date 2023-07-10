@@ -59,6 +59,7 @@ i {
   display: flex;
   justify-content: start;
   align-items: start;
+  color: #8A2BE2;
 }
 
 progress {
@@ -68,6 +69,19 @@ progress {
 }
 
 progress::-moz-progress-bar {
+  background: #8A2BE2;
+}
+
+progress::-webkit-progress-bar {
+  color: #8A2BE2;
+}
+
+progress::-ms-fill {
+  background-color: white;
+  color: #8A2BE2;
+}
+
+progress::-webkit-progress-value {
   background: #8A2BE2;
 }
 
