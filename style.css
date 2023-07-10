@@ -71,6 +71,8 @@ progress::-moz-progress-bar {
   background: #8A2BE2;
 }
 
+#progresss::-webkit-progress-value { background: #8A2BE2 }
+
 @-webkit-keyframes animate-stripes {
   100% { background-position: -100px 0px; }
 }
